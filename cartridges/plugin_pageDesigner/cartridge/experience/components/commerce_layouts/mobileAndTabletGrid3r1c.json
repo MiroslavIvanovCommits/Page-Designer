@@ -1,0 +1,58 @@
+{
+    "name": "3 Row x 1 Col (Mobile/Tablet), 1 Row x 3 Col (Desktop)",
+    "description": "This is a layout component of 3 rows by 1 column for mobile/tablet and 1 row by 3 columns for desktop.",
+    "group": "commerce_layouts",
+    "attribute_definition_groups": [
+        {
+            "id": "columnsOrder",
+            "name": "Manually set the order of columns",
+            "description": "Manually set the order in which the columns will be displayed. If set, make sure that every column has unique value.",
+            "attribute_definitions": [
+                {
+                    "id": "column1Order",
+                    "name": "Column 1 order",
+                    "description": "The position of column 1.",
+                    "type": "enum",
+                    "values": [1, 2, 3],
+                    "default_value": 1,
+                    "required": false
+                },
+                {
+                    "id": "column2Order",
+                    "name": "Column 2 order",
+                    "description": "The position of column 2.",
+                    "type": "enum",
+                    "values": [1, 2, 3],
+                    "default_value": 2,
+                    "required": false
+                },
+                {
+                    "id": "column3Order",
+                    "name": "Column 3 order",
+                    "description": "The position of column 3.",
+                    "type": "enum",
+                    "values": [1, 2, 3],
+                    "default_value": 3,
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id": "column1",
+            "name": "Column 1",
+            "component_type_exclusions": []
+        },
+        {
+            "id": "column2",
+            "name": "Column 2",
+            "component_type_exclusions": []
+        },
+        {
+            "id": "column3",
+            "name": "Column 3",
+            "component_type_exclusions": []
+        }
+    ]
+}

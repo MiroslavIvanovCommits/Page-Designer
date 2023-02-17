@@ -1,0 +1,19 @@
+.image-heading-container {
+  position: absolute;
+  top: 2%;
+  width: 100%;
+  z-index: 1;
+  padding-left: 0;
+}
+
+.image-description-container {
+  position: absolute;
+  bottom: 3%;
+  width: 100%;
+}
+
+.mainbanner-sub-text {
+  margin-top: 1rem;
+  font-family: var(--skin-header-font), sans-serif;
+  font-size: 1.2rem;
+}
