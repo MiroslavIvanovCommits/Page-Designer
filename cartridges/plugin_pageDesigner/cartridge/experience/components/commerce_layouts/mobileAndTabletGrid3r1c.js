@@ -4,6 +4,7 @@
 var Template = require('dw/util/Template');
 var HashMap = require('dw/util/HashMap');
 var PageRenderHelper = require('*/cartridge/experience/utilities/PageRenderHelper.js');
+var setCachePeriod = require("~/cartridge/experience/utilities/setCachePeriod.js")
 
 /**
  * Render logic for the storefront.3 Row x 1 Col (Mobile) 1 Row x 3 Col (Desktop) layout
@@ -28,9 +29,7 @@ module.exports.render = function (context, modelIn) {
     model.regions.column3.setClassName("region col-12 col-md-4 order-" + col3Order);
 
     // instruct 24 hours relative pagecache
-    var expires = new Date();
-    expires.setDate(expires.getDate() + 1); // this handles overflow automatically
-    response.setExpires(expires);
+    setCachePeriod.set24HoursCache();
 
     return new Template('experience/components/commerce_layouts/mobileAndTabletGrid3r1c').render(model).text;
 };

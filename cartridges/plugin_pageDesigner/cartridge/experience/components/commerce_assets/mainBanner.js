@@ -5,6 +5,7 @@ var Template = require('dw/util/Template');
 var HashMap = require('dw/util/HashMap');
 var URLUtils = require('dw/web/URLUtils');
 var ImageTransformation = require('*/cartridge/experience/utilities/ImageTransformation.js');
+var setCachePeriod = require("~/cartridge/experience/utilities/setCachePeriod.js")
 
 /**
  * Render logic for the storefront.MainBanner component
@@ -26,9 +27,7 @@ module.exports.render = function (context, modelIn) {
     }
 
     // instruct 24 hours relative pagecache
-    var expires = new Date();
-    expires.setDate(expires.getDate() + 1); // this handles overflow automatically
-    response.setExpires(expires);
+    setCachePeriod.set24HoursCache();
 
     return new Template('experience/components/commerce_assets/mainBanner').render(model).text;
 };
