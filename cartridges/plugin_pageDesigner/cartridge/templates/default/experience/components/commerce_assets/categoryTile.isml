@@ -1,9 +1,7 @@
+<isset name="LinkPositionClass" value="${pdict.category.categoryLinkPosition == 'top' ? 'flex-column-reverse' : 'flex-column'}" scope="page" />
+
 <div class="row">
-    <div class="col-12 d-flex justify-content-center text-center <isif condition=${pdict.category.categoryLinkPosition == 'top'}>
-        flex-column-reverse
-    <iselse/>
-        flex-column
-        </isif>">
+    <div class="col-12 d-flex justify-content-center text-center ${LinkPositionClass}">
 
         <a href="${pdict.category.url}" class="text-decoration-none">
             <figure>
